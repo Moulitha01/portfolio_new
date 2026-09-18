@@ -10,7 +10,7 @@
 export const profile = {
   name: "Moulitha",
   surname: "Chandrasekar",
-  logo: "M/C",
+  logo: "portfolio",
   role: "AI/ML ENGINEER",
   location: "CHENNAI, INDIA",
   heroSummary:
@@ -87,7 +87,7 @@ export const experience = {
 
 export const stats = [
   { value: "8.5", label: "CGPA / 10" },
-  { value: "03", label: "CERTIFICATIONS" },
+  { value: "05", label: "CERTIFICATIONS" },
   { value: "03", label: "LANGUAGES" },
 ];
 
@@ -109,6 +109,18 @@ export const certifications = [
     issuer: "Chennai Data Circle",
     // ⚠️ PLACEHOLDER — replace with the real certificate/credential URL.
     url: "https://ADD-AIDAY-CERTIFICATE-LINK.example.com",
+  },
+  {
+    title: "Python Internship Certificate",
+    issuer: "CodeAlpha (Virtual)",
+    // ⚠️ PLACEHOLDER — replace with the real certificate/credential URL.
+    url: "https://ADD-CODEALPHA-PYTHON-CERTIFICATE-LINK.example.com",
+  },
+  {
+    title: "Web Application Certificate",
+    issuer: "CodeSoft (Virtual)",
+    // ⚠️ PLACEHOLDER — replace with the real certificate/credential URL.
+    url: "https://ADD-CODESOFT-CERTIFICATE-LINK.example.com",
   },
 ];
 

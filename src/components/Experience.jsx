@@ -1,47 +1,105 @@
 import React from "react";
-import { experience, stats } from "../data/portfolioData.js";
+
+const STATS = [
+  { value: "8.5", label: "CGPA / 10" },
+  { value: "03", label: "CERTIFICATIONS" },
+  { value: "03", label: "LANGUAGES" },
+];
 
 export default function Experience() {
   return (
-    <section id="experience" className="border-b border-line">
-      <div className="max-w-6xl mx-auto px-6 py-20">
-        <p className="font-mono-label text-xs text-accent mb-4">03 / EXPERIENCE</p>
-        <h2 className="font-display font-bold text-4xl sm:text-5xl mb-12">Field tested.</h2>
+    <>
+      <style>{`
+        .experience{
+          --bg:#0a0a0d;
+          --line:#1e1e24;
+          --text:#f5f5f7;
+          --muted:#8a8a93;
+          --purple:#a855f7;
+          background:var(--bg);
+          color:var(--text);
+          font-family:'Space Grotesk',sans-serif;
+          max-width:1520px; margin:0 auto; padding:80px 20px 120px;
+          display:grid; grid-template-columns:.62fr 1fr; gap:60px;
+        }
+        .experience *{box-sizing:border-box;}
 
-        <div className="border-l-2 border-accent pl-6 py-1">
-          <div className="flex flex-wrap items-baseline justify-between gap-2 mb-1">
-            <h3 className="font-display font-bold text-2xl">{experience.role}</h3>
-            <span className="font-mono-label text-xs text-white/40">{experience.dates}</span>
+        .exp-eyebrow{
+          font-family:'JetBrains Mono',monospace; font-size:13px; letter-spacing:.1em;
+          color:var(--purple); margin-bottom:20px;
+        }
+        .exp-heading{
+          font-size:40px; line-height:1.15; font-weight:700; letter-spacing:-.01em; margin:0;
+        }
+
+        .exp-entry{
+          border-left:1px solid var(--line);
+          padding-left:28px;
+        }
+        .exp-top{
+          display:flex; align-items:baseline; justify-content:space-between; gap:24px; flex-wrap:wrap;
+        }
+        .exp-role{
+          font-size:26px; font-weight:700; letter-spacing:-.01em; margin:0;
+        }
+        .exp-dates{
+          font-family:'JetBrains Mono',monospace; font-size:13px; letter-spacing:.05em; color:var(--muted);
+          white-space:nowrap;
+        }
+        .exp-org{
+          font-size:16px; color:var(--purple); margin-top:8px;
+        }
+        .exp-desc{
+          margin-top:24px; font-size:16px; line-height:1.6; color:var(--muted); max-width:600px;
+        }
+
+        .stats-row{
+          margin-top:48px; padding-top:40px; border-top:1px solid var(--line);
+          display:flex; gap:80px; flex-wrap:wrap;
+        }
+        .stat-value{
+          font-size:32px; font-weight:700; color:var(--purple); letter-spacing:-.01em;
+        }
+        .stat-label{
+          margin-top:8px; font-family:'JetBrains Mono',monospace; font-size:12px;
+          letter-spacing:.08em; color:var(--muted);
+        }
+
+        @media (max-width:860px){
+          .experience{grid-template-columns:1fr; gap:32px;}
+          .stats-row{gap:40px;}
+        }
+      `}</style>
+
+      <section className="experience">
+        <div>
+          <div className="exp-eyebrow">03 / EXPERIENCE</div>
+          <h2 className="exp-heading">Field tested.</h2>
+        </div>
+
+        <div>
+          <div className="exp-entry">
+            <div className="exp-top">
+              <h3 className="exp-role">Machine Learning Intern</h3>
+              <div className="exp-dates">DEC 2025 — JAN 2026</div>
+            </div>
+            <div className="exp-org">Defence Research and Development Organisation</div>
+            <p className="exp-desc">
+              Developed supervised learning models, shaped real-world datasets through feature engineering and
+              exploratory analysis, and collaborated with researchers on defence-oriented AI applications.
+            </p>
           </div>
-          <p className="text-accent-soft mb-4">{experience.company}</p>
-          <p className="text-white/55 max-w-2xl">{experience.description}</p>
-        </div>
 
-        <div className="grid grid-cols-3 border-t border-line mt-16 pt-8 gap-6">
-          {stats.map((stat, i) => {
-            const isCert = stat.label === "CERTIFICATIONS";
-            const content = (
-              <>
-                <p className="font-display font-bold text-3xl sm:text-4xl text-accent">
-                  {stat.value}
-                </p>
-                <p className="font-mono-label text-[11px] text-white/40 mt-1">{stat.label}</p>
-              </>
-            );
-            return isCert ? (
-              <a
-                key={i}
-                href="#certifications"
-                className="hover:opacity-80 transition-opacity cursor-pointer"
-              >
-                {content}
-              </a>
-            ) : (
-              <div key={i}>{content}</div>
-            );
-          })}
+          <div className="stats-row">
+            {STATS.map((stat) => (
+              <div key={stat.label}>
+                <div className="stat-value">{stat.value}</div>
+                <div className="stat-label">{stat.label}</div>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
