@@ -21,10 +21,10 @@ export default function Contact() {
         </a>
 
         <div className="w-full flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-line mt-24 pt-8">
-          <p className="font-mono-label text-[11px] text-white/40">
+          <p className="font-mono-label text-[11px] text-accent-soft">
             © {contact.year} {profile.name.toUpperCase()} {profile.surname.toUpperCase()}
           </p>
-          <div className="flex items-center gap-5 text-white/50">
+          <div className="flex items-center gap-5 text-accent-soft">
             <a
               href={socials.github}
               target="_blank"

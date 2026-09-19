@@ -4,22 +4,49 @@ import LaptopCode from "./LaptopCode.jsx";
 import { ArrowIcon, DownloadIcon, GithubIcon, LinkedinIcon, MailIcon } from "./Icons.jsx";
 
 export default function Hero() {
+  const quickLinks = [
+    {
+      id: "01",
+      title: "GITHUB",
+      subtitle: "View repositories",
+      href: socials.github,
+      external: true,
+      Icon: GithubIcon,
+    },
+    {
+      id: "02",
+      title: "LINKEDIN",
+      subtitle: "Connect professionally",
+      href: socials.linkedin,
+      external: true,
+      Icon: LinkedinIcon,
+    },
+    {
+      id: "03",
+      title: "EMAIL",
+      subtitle: "Start a conversation",
+      href: `mailto:${socials.email}`,
+      external: false,
+      Icon: MailIcon,
+    },
+  ];
+
   return (
-    <section id="top" className="relative border-b border-line">
+    <section id="top" className="relative grid-bg border-b border-line">
       {/* top nav */}
-      <div className="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
+      <div className="w-full px-4 py-6 flex items-center justify-between">
         <a href="#top" className="font-display font-bold text-lg tracking-tight">
           {profile.logo.split("/")[0]}
           <span className="text-accent">/{profile.logo.split("/")[1]}</span>
         </a>
 
-        <nav className="hidden sm:flex items-center gap-10 font-mono-label text-xs text-white/70">
-          <a href="#about" className="hover:text-accent-pale transition-colors">ABOUT</a>
-          <a href="#work" className="hover:text-accent-pale transition-colors">WORK</a>
-          <a href="#experience" className="hover:text-accent-pale transition-colors">EXPERIENCE</a>
-        </nav>
+        <div className="flex items-center gap-10">
+          <nav className="hidden sm:flex items-center gap-10 font-mono-label text-xs text-accent-soft">
+            <a href="#about" className="hover:text-white transition-colors">ABOUT</a>
+            <a href="#work" className="hover:text-white transition-colors">WORK</a>
+            <a href="#experience" className="hover:text-white transition-colors">EXPERIENCE</a>
+          </nav>
 
-        <div className="flex items-center gap-5">
           <div className="hidden sm:flex items-center gap-4 text-accent-soft">
             <a href={socials.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="hover:text-accent-pale transition-colors">
               <GithubIcon />
@@ -69,39 +96,25 @@ export default function Hero() {
               </a>
             </div>
 
-            <div className="border-t border-line divide-y divide-line mt-10">
-              <a href={socials.github} target="_blank" rel="noopener noreferrer" className="group flex items-center gap-5 py-6 hover:bg-white/[0.02] transition-colors">
-                <div className="w-12 h-12 shrink-0 border border-line rounded-lg flex items-center justify-center text-accent group-hover:border-accent-soft transition-colors">
-                  <GithubIcon />
-                </div>
-                <div>
-                  <p className="font-mono-label text-[11px] text-accent-soft mb-1">01 // LINK</p>
-                  <p className="font-display font-semibold text-base">GITHUB</p>
-                  <p className="text-white/45 text-sm">View repositories</p>
-                </div>
-              </a>
-
-              <a href={socials.linkedin} target="_blank" rel="noopener noreferrer" className="group flex items-center gap-5 py-6 hover:bg-white/[0.02] transition-colors">
-                <div className="w-12 h-12 shrink-0 border border-line rounded-lg flex items-center justify-center text-accent group-hover:border-accent-soft transition-colors">
-                  <LinkedinIcon />
-                </div>
-                <div>
-                  <p className="font-mono-label text-[11px] text-accent-soft mb-1">02 // LINK</p>
-                  <p className="font-display font-semibold text-base">LINKEDIN</p>
-                  <p className="text-white/45 text-sm">Connect professionally</p>
-                </div>
-              </a>
-
-              <a href={`mailto:${socials.email}`} className="group flex items-center gap-5 py-6 hover:bg-white/[0.02] transition-colors">
-                <div className="w-12 h-12 shrink-0 border border-line rounded-lg flex items-center justify-center text-accent group-hover:border-accent-soft transition-colors">
-                  <MailIcon />
-                </div>
-                <div>
-                  <p className="font-mono-label text-[11px] text-accent-soft mb-1">03 // LINK</p>
-                  <p className="font-display font-semibold text-base">EMAIL</p>
-                  <p className="text-white/45 text-sm">Start a conversation</p>
-                </div>
-              </a>
+            {/* link boxes: solid black cards, separated by a gap */}
+            <div className="flex flex-col gap-3 mt-10">
+              {quickLinks.map(({ id, title, subtitle, href, external, Icon }) => (
+                <a
+                  key={id}
+                  href={href}
+                  {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                  className="group flex items-center gap-5 px-5 py-5 bg-black border border-line rounded-xl hover:border-accent-soft transition-colors"
+                >
+                  <div className="w-12 h-12 shrink-0 border border-line rounded-lg bg-black flex items-center justify-center text-accent group-hover:border-accent-soft transition-colors">
+                    <Icon />
+                  </div>
+                  <div>
+                    <p className="font-mono-label text-[11px] text-accent-soft mb-1">{id} // LINK</p>
+                    <p className="font-display font-semibold text-base">{title}</p>
+                    <p className="text-white/45 text-sm">{subtitle}</p>
+                  </div>
+                </a>
+              ))}
             </div>
           </div>
 

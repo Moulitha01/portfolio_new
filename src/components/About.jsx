@@ -4,7 +4,7 @@ import { iconMap } from "./Icons.jsx";
 
 export default function About() {
   return (
-    <section id="about" className="border-b border-line">
+    <section id="about" className="grid-bg border-b border-line">
       <div className="max-w-6xl mx-auto px-6 py-20">
         <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-start">
           <div>
@@ -25,7 +25,7 @@ export default function About() {
             return (
               <div
                 key={skill.title}
-                className="h-full border border-line rounded-lg p-6 transition-colors hover:bg-[#0b1230] hover:border-accent-soft/40"
+                className="h-full bg-black border border-line rounded-lg p-6 transition-colors hover:border-accent-soft/60"
               >
                 <Icon className="w-6 h-6 text-accent mb-4" />
                 <h3 className="font-display font-semibold text-xl mb-1">{skill.title}</h3>

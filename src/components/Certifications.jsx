@@ -4,19 +4,19 @@ import { BadgeIcon, ArrowIcon } from "./Icons.jsx";
 
 export default function Certifications() {
   return (
-    <section id="certifications" className="border-b border-line">
+    <section id="certifications" className="grid-bg border-b border-line">
       <div className="max-w-6xl mx-auto px-6 py-20 text-left">
         <p className="font-mono-label text-xs text-accent mb-4 text-left">04 / CREDENTIALS</p>
         <h2 className="font-display font-bold text-4xl sm:text-5xl mb-12 text-left">Verified & tested.</h2>
 
-        <div className="border-t border-line">
+        <div className="flex flex-col gap-4">
           {certifications.map((cert) => (
             <a
               key={cert.title}
               href={cert.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center justify-between gap-6 border-b border-line py-7 hover:bg-white/[0.02] transition-colors -mx-6 px-6"
+              className="group flex items-center justify-between gap-6 bg-black border border-line rounded-lg px-6 py-6 hover:border-accent-soft/60 transition-colors"
             >
               <div className="flex items-center gap-5">
                 <BadgeIcon className="w-6 h-6 text-accent shrink-0" />

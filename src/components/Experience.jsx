@@ -11,12 +11,11 @@ export default function Experience() {
     <>
       <style>{`
         .experience{
-          --bg:#0a0a0d;
+          --box:#000;
           --line:#1e1e24;
           --text:#f5f5f7;
           --muted:#8a8a93;
           --purple:#a855f7;
-          background:var(--bg);
           color:var(--text);
           font-family:'Space Grotesk',sans-serif;
           max-width:1152px; margin:0 auto; padding:80px 24px 120px;
@@ -33,9 +32,13 @@ export default function Experience() {
         }
 
         .exp-entry{
-          border-left:1px solid var(--line);
-          padding-left:28px;
+          background:var(--box);
+          border:1px solid var(--line);
+          border-radius:8px;
+          padding:32px;
+          transition:border-color .2s;
         }
+        .exp-entry:hover{border-color:rgba(168,85,247,.6);}
         .exp-top{
           display:flex; align-items:baseline; justify-content:space-between; gap:24px; flex-wrap:wrap;
         }
@@ -54,9 +57,17 @@ export default function Experience() {
         }
 
         .stats-row{
-          margin-top:48px; padding-top:40px; border-top:1px solid var(--line);
-          display:flex; gap:80px; flex-wrap:wrap;
+          margin-top:16px;
+          display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:16px;
         }
+        .stat-box{
+          background:var(--box);
+          border:1px solid var(--line);
+          border-radius:8px;
+          padding:28px 24px;
+          transition:border-color .2s;
+        }
+        .stat-box:hover{border-color:rgba(168,85,247,.6);}
         .stat-value{
           font-size:32px; font-weight:700; color:var(--purple); letter-spacing:-.01em;
         }
@@ -67,36 +78,38 @@ export default function Experience() {
 
         @media (max-width:860px){
           .experience{grid-template-columns:1fr; gap:32px;}
-          .stats-row{gap:40px;}
+          .exp-entry{padding:24px;}
         }
       `}</style>
 
-      <section className="experience">
-        <div>
-          <div className="exp-eyebrow">03 / EXPERIENCE</div>
-          <h2 className="exp-heading">Field tested.</h2>
-        </div>
-
-        <div>
-          <div className="exp-entry">
-            <div className="exp-top">
-              <h3 className="exp-role">Machine Learning Intern</h3>
-              <div className="exp-dates">DEC 2025 — JAN 2026</div>
-            </div>
-            <div className="exp-org">Defence Research and Development Organisation</div>
-            <p className="exp-desc">
-              Developed supervised learning models, shaped real-world datasets through feature engineering and
-              exploratory analysis, and collaborated with researchers on defence-oriented AI applications.
-            </p>
+      <section className="grid-bg border-b border-line">
+        <div className="experience">
+          <div>
+            <div className="exp-eyebrow">03 / EXPERIENCE</div>
+            <h2 className="exp-heading">Field tested.</h2>
           </div>
 
-          <div className="stats-row">
-            {STATS.map((stat) => (
-              <div key={stat.label}>
-                <div className="stat-value">{stat.value}</div>
-                <div className="stat-label">{stat.label}</div>
+          <div>
+            <div className="exp-entry">
+              <div className="exp-top">
+                <h3 className="exp-role">Machine Learning Intern</h3>
+                <div className="exp-dates">DEC 2025 — JAN 2026</div>
               </div>
-            ))}
+              <div className="exp-org">Defence Research and Development Organisation</div>
+              <p className="exp-desc">
+                Developed supervised learning models, shaped real-world datasets through feature engineering and
+                exploratory analysis, and collaborated with researchers on defence-oriented AI applications.
+              </p>
+            </div>
+
+            <div className="stats-row">
+              {STATS.map((stat) => (
+                <div className="stat-box" key={stat.label}>
+                  <div className="stat-value">{stat.value}</div>
+                  <div className="stat-label">{stat.label}</div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
