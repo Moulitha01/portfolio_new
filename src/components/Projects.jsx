@@ -34,7 +34,7 @@ export default function Projects() {
           background:var(--bg);
           color:var(--text);
           font-family:'Space Grotesk',sans-serif;
-          max-width:1520px; margin:0 auto; padding:80px 20px 120px;
+          max-width:1152px; margin:0 auto; padding:80px 24px 120px;
         }
         .projects *{box-sizing:border-box;}
 

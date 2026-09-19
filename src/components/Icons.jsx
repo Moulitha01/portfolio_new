@@ -106,6 +106,25 @@ export function BadgeIcon({ className = "w-6 h-6" }) {
   );
 }
 
+export function LayoutIcon({ className = "w-6 h-6" }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} {...base}>
+      <rect x="3" y="4" width="18" height="16" rx="2" />
+      <path d="M3 9h18M9 9v11" />
+    </svg>
+  );
+}
+
+export function ServerIcon({ className = "w-6 h-6" }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} {...base}>
+      <rect x="3" y="4" width="18" height="6" rx="1.5" />
+      <rect x="3" y="14" width="18" height="6" rx="1.5" />
+      <path d="M7 7h.01M7 17h.01" />
+    </svg>
+  );
+}
+
 export const iconMap = {
   brain: BrainIcon,
   sparkle: SparkleIcon,
@@ -113,4 +132,6 @@ export const iconMap = {
   database: DatabaseIcon,
   scan: ScanIcon,
   badge: BadgeIcon,
+  layout: LayoutIcon,
+  server: ServerIcon,
 };

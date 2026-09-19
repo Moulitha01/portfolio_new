@@ -19,7 +19,7 @@ export default function Experience() {
           background:var(--bg);
           color:var(--text);
           font-family:'Space Grotesk',sans-serif;
-          max-width:1520px; margin:0 auto; padding:80px 20px 120px;
+          max-width:1152px; margin:0 auto; padding:80px 24px 120px;
           display:grid; grid-template-columns:.62fr 1fr; gap:60px;
         }
         .experience *{box-sizing:border-box;}

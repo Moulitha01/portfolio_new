@@ -5,9 +5,9 @@ import { BadgeIcon, ArrowIcon } from "./Icons.jsx";
 export default function Certifications() {
   return (
     <section id="certifications" className="border-b border-line">
-      <div className="max-w-6xl mx-auto px-6 py-20">
-        <p className="font-mono-label text-xs text-accent mb-4">04 / CREDENTIALS</p>
-        <h2 className="font-display font-bold text-4xl sm:text-5xl mb-12">Verified & tested.</h2>
+      <div className="max-w-6xl mx-auto px-6 py-20 text-left">
+        <p className="font-mono-label text-xs text-accent mb-4 text-left">04 / CREDENTIALS</p>
+        <h2 className="font-display font-bold text-4xl sm:text-5xl mb-12 text-left">Verified & tested.</h2>
 
         <div className="border-t border-line">
           {certifications.map((cert) => (
@@ -20,7 +20,7 @@ export default function Certifications() {
             >
               <div className="flex items-center gap-5">
                 <BadgeIcon className="w-6 h-6 text-accent shrink-0" />
-                <div>
+                <div className="text-left">
                   <h3 className="font-display font-semibold text-lg sm:text-xl">{cert.title}</h3>
                   <p className="font-mono-label text-xs text-accent-soft mt-1">{cert.issuer}</p>
                 </div>

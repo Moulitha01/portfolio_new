@@ -10,7 +10,7 @@
 export const profile = {
   name: "Moulitha",
   surname: "Chandrasekar",
-  logo: "portfolio",
+  logo: "M/C",
   role: "AI/ML ENGINEER",
   location: "CHENNAI, INDIA",
   heroSummary:
@@ -41,14 +41,24 @@ export const skills = [
     icon: "sparkle",
   },
   {
-    title: "Engineering",
-    items: "Python · JavaScript · React · FastAPI · Node.js",
+    title: "Languages",
+    items: "Python · JavaScript",
     icon: "code",
   },
   {
     title: "Data",
     items: "PyTorch · Scikit-learn · MongoDB · PaddleOCR",
     icon: "database",
+  },
+  {
+    title: "Frontend",
+    items: "React.js · HTML5 · CSS3 · Tailwind CSS",
+    icon: "layout",
+  },
+  {
+    title: "Backend",
+    items: "Node.js · Express.js · FastAPI",
+    icon: "server",
   },
 ];
 
