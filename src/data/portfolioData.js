@@ -72,7 +72,7 @@ export const projects = [
       "A multi-agent platform that translates natural language into production-ready software through specialized Planner, Designer, Generator, and Tester agents.",
     stack: ["LANGCHAIN", "GEMINI", "FASTAPI", "REACT"],
     // ⚠️ PLACEHOLDER — replace with the live deployed URL.
-    deployedUrl: "https://ADD-NEURALFORGE-DEPLOYED-URL.example.com",
+    deployedUrl: "https://neuralforge-code-generator.vercel.app/",
   },
   {
     index: "02",
