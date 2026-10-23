@@ -86,7 +86,7 @@ export const projects = [
     deployedUrl: "https://ADD-SCHEME-SATHI-DEPLOYED-URL.example.com",
   },
 ];
-
+export const experience = {
   role: "Machine Learning Intern",
   company: "Defence Research and Development Organisation",
   dates: "DEC 2025 — JAN 2026",
